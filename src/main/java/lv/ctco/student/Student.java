@@ -24,17 +24,8 @@ public class Student implements Serializable {
     @GeneratedValue
     private int id;
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Assignment> listAssignment =new  ArrayList<>();
+    private List<Assignment> listAssignment = new ArrayList<>();
     private static final AtomicInteger count = new AtomicInteger(0);
-
-    public Student() {
-    }
-
-    public Student(String surname, String name) {
-        this.surname = surname;
-        this.name = name;
-        this.id = count.incrementAndGet();
-    }
 
     public String getName() {
         return name;
@@ -68,7 +59,7 @@ public class Student implements Serializable {
         this.listAssignment = listAssignment;
     }
 
-    public void addAssigment(Assignment assignment){
+    public void addAssignment(Assignment assignment) {
         listAssignment.add(assignment);
     }
 }
